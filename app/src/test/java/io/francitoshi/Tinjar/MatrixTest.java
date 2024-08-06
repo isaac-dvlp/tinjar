@@ -66,6 +66,38 @@ public class MatrixTest
         }
         
     }
+    @Test
+    public void testSomeMethod3()
+    {
+        {
+            long[][] exp = {{2}};
+            long[][] dst = new long[1][1];
+            long[][] src = {{1}};
+            Matrix.add(dst,src,src);
+            assertArrayEquals(exp,dst);
+        }
+        {
+            long[][] exp = {{2,4},{6,8}};
+            long[][] dst = new long[2][2];
+            long[][] src = {{1,2},{3,4}};
+            Matrix.add(dst,src,src);
+            assertArrayEquals(exp,dst);
+        }
+        {
+            long[][] exp = {{2,4},{6,8},{10,12}};
+            long[][] dst = new long[3][2];
+            long[][] src = {{1,2},{3,4},{5,6}};
+            Matrix.add(dst,src,src);
+            assertArrayEquals(exp,dst);
+        }
+        {
+            long[][] exp = {{2,4,6},{8,10,12}};
+            long[][] dst = new long[2][3];
+            long[][] src = {{1,2,3},{4,5,6}};
+            Matrix.add(dst,src,src);
+            assertArrayEquals(exp,dst);
+        }
+    }
     
     
 }
