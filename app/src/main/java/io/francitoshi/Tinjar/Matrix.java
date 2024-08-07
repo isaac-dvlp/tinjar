@@ -164,4 +164,42 @@ public class Matrix
             }
         }
     }
+    public static int[][] traspose(int[][] a){
+        if(a.length==0){
+            return a;
+        }
+        int r = a.length;
+        int c = a[0].length;
+        int[][] at= new int[c][r];
+        for(int i=0; i<a.length;i++){
+            for(int j=0;j<a[i].length;j++){
+                at[j][i]=a[i][j];
+            }
+        }
+        return at;
+    }
+    public static int[][] multiply(int[][] a, int[][] b) throws DimensionException
+    {
+        int ra= a.length;
+        int ca= a[0].length;
+        int rb= b.length;
+        int cb= b[0].length;
+        int[][] c = new int[ra][cb];
+        if(ca!=rb){
+            throw new DimensionException(); 
+        }
+        for(int row=0;row<ra;row++)
+        {
+            for(int col=0;col<cb;col++)
+            {
+                int acum=0;
+                for(int k=0;k<ca;k++)
+                {
+                    acum+=a[row][k]*b[k][col];
+                }
+                c[row][col]=acum;
+            }
+        }
+        return c;
+    }
 }

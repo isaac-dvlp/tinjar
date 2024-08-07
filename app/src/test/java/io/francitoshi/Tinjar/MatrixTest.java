@@ -225,4 +225,21 @@ public class MatrixTest
             assertArrayEquals(exp,dst);
         }
     }
+    @Test
+    public void testSomeMethodTraspose()
+    {
+        int[][] a = {{1,2,3}};
+        int[][] exp = {{1},{2},{3}};
+        int [][] rs = Matrix.traspose(a);
+        assertArrayEquals(exp,rs);
+    }
+    @Test
+    public void testSomeMethodMultiply()
+    {
+        int[][] a = {{1,2,3},{4,5,6}};
+        int[][] b = {{7,8},{9,10},{11,12}};
+        int[][] exp = {{58,64},{139,154}};
+        int [][] rs = Matrix.multiply(a,b);
+        assertArrayEquals(exp,rs);
+    }
 }
